@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTestTab extends Migration
+class CreateTestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateTestTab extends Migration
      */
     public function up()
     {
-        Schema::create('test_tab', function (Blueprint $table) {
+        Schema::create('tests', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string("text",100);
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateTestTab extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('test_tab');
+        Schema::dropIfExists('tests');
     }
 }
