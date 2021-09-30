@@ -15,9 +15,10 @@ class TestController extends Controller
     {
         $values = Test::all();
 
+        $tests = DB::table('tests')->get();
 
 
-        dd($values);
+        dd($tests);
 
         return view('tests/test', compact('values'));
     }
