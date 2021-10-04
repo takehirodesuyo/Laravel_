@@ -25,6 +25,9 @@ Route::group(['prefix' => 'contact', 'middleware' => 'auth'], function(){
     Route::post('store', 'ContactFormController@store')->name('contact.store');
     //詳細ページ
     Route::get('show/{id}', 'ContactFormController@show')->name('contact.show');
+    Route::get('edit/{id}', 'ContactFormController@edit')->name('contact.edit');
+    Route::post('update/{id}', 'ContactFormController@update')->name('contact.update');
+    Route::post('destroy/{id}', 'ContactFormController@destroy')->name('contact.destroy');
 });
 
 
